@@ -1,1 +1,1 @@
-nacos/nacos-server:v2.2.3 registry.cn-beijing.aliyuncs.com/ijx-public/nacos-server:v2.2.3
+ubuntu:focal registry.cn-beijing.aliyuncs.com/ijx-public/ubuntu:focal
