@@ -7,7 +7,7 @@ on:
   #   branches: [ main ]
 
 env:
-  REGISTRY: registry.cn-beijing.aliyuncs.com
+  REGISTRY: registry.cn-hangzhou.aliyuncs.com
   ALIYUN_REGISTRY_USER: "${{ secrets.ALIYUN_REGISTRY_USER }}"
   ALIYUN_REGISTRY_PASSWORD: "${{ secrets.ALIYUN_REGISTRY_PASSWORD }}"
   MM_NOTIFY_URL: "${{ secrets.MM_NOTIFY_URL }}"
@@ -27,6 +27,8 @@ jobs:
     - name: Build and push image to ACR EE
       run: |
         docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $REGISTRY
-        sh pull.sh
-        cat trigger.txt
-        curl -d '@trigger.txt' $MM_NOTIFY_URL
+        # sh pull.sh
+        data=`cat trigger.txt`
+        curl  -H 'Content-Type: application/json' \
+         -d "{\"msgtype\": \"text\",\"text\": {\"content\":\"同步成功 $data \"}}" \
+         $MM_NOTIFY_URL
