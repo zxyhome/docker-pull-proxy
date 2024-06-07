@@ -27,7 +27,7 @@ jobs:
     - name: Build and push image to ACR EE
       run: |
         docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $REGISTRY
-        # sh pull.sh
+        sh pull.sh
         data=`cat trigger.txt`
         curl  -H 'Content-Type: application/json' \
          -d "{\"msgtype\": \"text\",\"text\": {\"content\":\"同步成功 $data \"}}" \
