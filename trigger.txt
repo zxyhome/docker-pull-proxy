@@ -1,1 +1,1 @@
-ubuntu:focal registry.cn-beijing.aliyuncs.com/ijx-public/ubuntu:focal
+confluentinc/ksqldb-server:0.29.0 registry.cn-beijing.aliyuncs.com/ijx-public/ksqldb-server:0.29.0
