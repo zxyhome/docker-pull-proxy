@@ -30,10 +30,10 @@ jobs:
         sh pull.sh
         data=`cat trigger.txt`
 
-        if [-z $MM_NOTIFY_URL ];then
-          echo 'MM_NOTIFY_URL not set'
-        else
+        if [ $MM_NOTIFY_URL ];then
           curl  -H 'Content-Type: application/json' \
             -d "{\"msgtype\": \"text\",\"text\": {\"content\":\"同步成功 $data \"}}" \
             $MM_NOTIFY_URL
+        else
+          echo 'MM_NOTIFY_URL not set'
         fi
