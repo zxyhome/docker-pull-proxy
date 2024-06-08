@@ -41,4 +41,8 @@ docker pull registry.cn-beijing.aliyuncs.com/ijx-public/nginx:alpine
 docker tag  registry.cn-beijing.aliyuncs.com/ijx-public/nginx:alpine nginx:alpine
 ```
 
+## 使用 cf worker
 
+[worker 怎么用可以参考这里](https://github.com/yaming116/npm-registry-worker)
+
+[docker registry worker 脚本在这里](./worker.js)
