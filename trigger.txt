@@ -1,1 +1,1 @@
-homeassistant/home-assistant:2024.6 registry.cn-hangzhou.aliyuncs.com/yaming116/home-assistant:2024.6
+whyour/qinglong:latest registry.cn-hangzhou.aliyuncs.com/zuxueyong/whyour-qinglong:latest
