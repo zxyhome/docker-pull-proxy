@@ -8,7 +8,10 @@
 **一定要看看**
 **一定要看看**
 
-当需要将某个镜像如 nginx:alpine 上传到私有仓库 registry.cn-beijing.aliyuncs.com/ijx-public/nginx:alpine
+当需要将某个镜像如 nginx:alpine 上传到私有仓库 registry.cn-beijing.aliyuncs.com/ijx-public/nginx:alpine    
+
+docker hub 镜像是支持多 cpu 架构的，默认 github action 拉取是宿主机相同 cpu 架构，应该都是x86 .
+如果需要拉取别的 cpu 架构支持，可以按照修改修改 pull.sh 文件
 
 ### 第一步
 修改 `trigger.txt` 内容, 内容分为两部分，中间使用空格隔开， 目前每次代码提交都会触发镜像同步，需要注意
@@ -41,8 +44,15 @@ docker pull registry.cn-beijing.aliyuncs.com/ijx-public/nginx:alpine
 docker tag  registry.cn-beijing.aliyuncs.com/ijx-public/nginx:alpine nginx:alpine
 ```
 
-## 使用 cf worker
+## 自建 docker 镜像加速
+
+
+### 使用 cf worker 创建
 
 [worker 怎么用可以参考这里](https://github.com/yaming116/npm-registry-worker)
 
 [docker registry worker 脚本在这里](./worker.js)
+
+### 有海外服务器的，使用 nginx 
+
+[教程链接地址](https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%BB%BAdocker-hub%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F/#%e6%96%b9%e6%a1%88%e4%b8%80%e4%ba%8c%e6%95%b4%e5%90%88)
